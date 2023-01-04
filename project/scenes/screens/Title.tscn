@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/screens/Title.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/LargeFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/TinyFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/data/version.tres" type="Resource" id=4]
+[ext_resource path="res://scenes/ui/Dialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/pixelbyte/scenes/settings/SettingsPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/gfx/Square - 128x128.png" type="Texture" id=7]
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 1 )
+game_version = ExtResource( 4 )
+transition_texture = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Title" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="CanvasLayer/Title"]
+anchor_right = 1.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+text = "Title"
+align = 1
+valign = 1
+
+[node name="Desc" type="Label" parent="CanvasLayer/Title"]
+modulate = Color( 0.701961, 0.701961, 0.701961, 1 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -140.0
+margin_bottom = -122.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 26.5, 8.5 )
+size_flags_horizontal = 4
+text = "stuff"
+align = 1
+valign = 1
+
+[node name="Version" type="Label" parent="CanvasLayer/Title"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -53.0
+margin_top = -17.0
+margin_right = -5.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 26.5, 8.5 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Version: "
+align = 1
+valign = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -61.0
+margin_right = 60.0
+margin_bottom = 85.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 112.0
+margin_bottom = 145.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 101.0
+margin_bottom = 134.0
+size_flags_horizontal = 5
+size_flags_vertical = 7
+custom_constants/separation = 5
+
+[node name="Play" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/Menu"]
+margin_right = 91.0
+margin_bottom = 38.0
+size_flags_vertical = 7
+text = "Play"
+
+[node name="Settings" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/Menu"]
+margin_top = 43.0
+margin_right = 91.0
+margin_bottom = 81.0
+size_flags_vertical = 7
+text = "Settings"
+
+[node name="Exit" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/Menu"]
+margin_top = 86.0
+margin_right = 91.0
+margin_bottom = 124.0
+size_flags_vertical = 7
+text = "Exit"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.52549 )
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
+veil_path = NodePath("../ColorRect")
+
+[node name="SettingsPanel" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -320.0
+margin_top = -83.0
+margin_right = 320.0
+margin_bottom = 83.0
+veil_path = NodePath("../ColorRect")
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/Menu/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/Menu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/Menu/Exit" to="." method="_on_Exit_pressed"]

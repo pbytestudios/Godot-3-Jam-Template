@@ -1,0 +1,128 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "PanelContainer",
+"class": "Bar",
+"language": "GDScript",
+"path": "res://scripts/Bar.gd"
+}, {
+"base": "PanelContainer",
+"class": "Dialog",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/scripts/ui/Dialog.gd"
+}, {
+"base": "Reference",
+"class": "Dir",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/scripts/Dir.gd"
+}, {
+"base": "ObservableNumber",
+"class": "ObservableFloat",
+"language": "GDScript",
+"path": "res://scripts/Observables/ObservableFloat.gd"
+}, {
+"base": "ObservableNumber",
+"class": "ObservableInt",
+"language": "GDScript",
+"path": "res://scripts/Observables/ObservableInt.gd"
+}, {
+"base": "Node",
+"class": "ObservableNumber",
+"language": "GDScript",
+"path": "res://scripts/Observables/ObservableNumber.gd"
+}, {
+"base": "Node2D",
+"class": "Putil",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/scripts/Putil.gd"
+}, {
+"base": "Reference",
+"class": "SettingsData",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/scenes/settings/SettingsData.gd"
+}, {
+"base": "Reference",
+"class": "StringReceiver",
+"language": "GDScript",
+"path": "res://scripts/StringReceiver.gd"
+}, {
+"base": "Resource",
+"class": "VersionData",
+"language": "GDScript",
+"path": "res://scripts/resources/VersionData.gd"
+} ]
+_global_script_class_icons={
+"Bar": "",
+"Dialog": "",
+"Dir": "",
+"ObservableFloat": "",
+"ObservableInt": "",
+"ObservableNumber": "",
+"Putil": "",
+"SettingsData": "",
+"StringReceiver": "",
+"VersionData": ""
+}
+
+[addons]
+
+firebelley/node_library/enable_screen_transition=true
+pixelbyte/enable_storage=true
+
+[application]
+
+config/name="Project Title"
+config/description="Ludum Dare 52 (2023)"
+run/main_scene="res://scenes/screens/Title.tscn"
+boot_splash/image="res://assets/gfx/PixelCloud.png"
+boot_splash/fullsize=false
+
+[autoload]
+
+ScreenTransition="*res://addons/firebelly/node_library/scenes/ScreenTransition.tscn"
+Storage="*res://addons/pixelbyte/autoloads/Storage.gd"
+C="*res://scripts/C.gd"
+
+[debug]
+
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/firebelly/center_pivot_offset/plugin.cfg", "res://addons/firebelly/node_library/plugin.cfg", "res://addons/firebelly/retile/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://assets/themes/blue/style.tres"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

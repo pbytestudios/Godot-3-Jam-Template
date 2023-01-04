@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/pixelbyte/autoloads/music/Music.gd" type="Script" id=1]
+
+[node name="Music" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="MusicA" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="MusicA"]
+
+[node name="MusicB" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+
+[node name="Tween" type="Tween" parent="MusicB"]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+
+[node name="Tween" type="Tween" parent="Ambient"]
+
+[node name="AmbientB" type="AudioStreamPlayer" parent="."]
+
+[node name="Tween" type="Tween" parent="AmbientB"]
+
+[connection signal="tween_completed" from="MusicA/Tween" to="." method="_on_MusicA_tween_completed"]
+[connection signal="tween_completed" from="MusicB/Tween" to="." method="_on_MusicB_tween_completed"]
+[connection signal="tween_completed" from="Ambient/Tween" to="." method="_on_Ambient_tween_completed"]
+[connection signal="tween_completed" from="AmbientB/Tween" to="." method="_on_AmbientB_tween_completed"]

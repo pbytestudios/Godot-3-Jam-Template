@@ -1,0 +1,185 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/pixelbyte/scenes/settings/SettingsPanel.gd" type="Script" id=4]
+
+[node name="SettingsPanel" type="PanelContainer"]
+pause_mode = 2
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+script = ExtResource( 4 )
+button_container_path = NodePath("MC/Controls/ButtonContainer")
+button_size = Vector2( 100, 40 )
+
+[node name="MC" type="MarginContainer" parent="."]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 639.0
+margin_bottom = 165.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="Controls" type="VBoxContainer" parent="MC"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 634.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Title" type="Label" parent="MC/Controls"]
+margin_left = 286.0
+margin_right = 344.0
+margin_bottom = 18.0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Settings"
+
+[node name="MasterGroup" type="HBoxContainer" parent="MC/Controls"]
+margin_top = 23.0
+margin_right = 630.0
+margin_bottom = 41.0
+
+[node name="UIName" type="Label" parent="MC/Controls/MasterGroup"]
+margin_right = 117.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 117, 0 )
+text = "Master:"
+align = 2
+
+[node name="MasterSlider" type="HSlider" parent="MC/Controls/MasterGroup"]
+margin_left = 121.0
+margin_right = 571.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+min_value = -24.0
+max_value = 80.0
+value = 80.0
+
+[node name="Value" type="Label" parent="MC/Controls/MasterGroup"]
+margin_left = 575.0
+margin_right = 630.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 55, 0 )
+text = "100%"
+
+[node name="SfxGroup" type="HBoxContainer" parent="MC/Controls"]
+margin_top = 46.0
+margin_right = 630.0
+margin_bottom = 64.0
+
+[node name="UIName" type="Label" parent="MC/Controls/SfxGroup"]
+margin_right = 117.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 117, 0 )
+text = "Sfx:"
+align = 2
+
+[node name="SfxSlider" type="HSlider" parent="MC/Controls/SfxGroup"]
+margin_left = 121.0
+margin_right = 571.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="MC/Controls/SfxGroup"]
+margin_left = 575.0
+margin_right = 630.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 55, 0 )
+text = "100%"
+
+[node name="AmbientGroup" type="HBoxContainer" parent="MC/Controls"]
+margin_top = 69.0
+margin_right = 630.0
+margin_bottom = 87.0
+
+[node name="UIName" type="Label" parent="MC/Controls/AmbientGroup"]
+margin_right = 117.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 117, 0 )
+text = "Ambient:"
+align = 2
+
+[node name="AmbientSlider" type="HSlider" parent="MC/Controls/AmbientGroup"]
+margin_left = 121.0
+margin_right = 571.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="MC/Controls/AmbientGroup"]
+margin_left = 575.0
+margin_right = 630.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 55, 0 )
+text = "100%"
+
+[node name="MusicGroup" type="HBoxContainer" parent="MC/Controls"]
+margin_top = 92.0
+margin_right = 630.0
+margin_bottom = 110.0
+
+[node name="UIName" type="Label" parent="MC/Controls/MusicGroup"]
+margin_right = 117.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 117, 0 )
+text = "Music:"
+align = 2
+
+[node name="MusicSlider" type="HSlider" parent="MC/Controls/MusicGroup"]
+margin_left = 121.0
+margin_right = 571.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Value" type="Label" parent="MC/Controls/MusicGroup"]
+margin_left = 575.0
+margin_right = 630.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 55, 0 )
+text = "100%"
+
+[node name="FullscreenCheck" type="CheckBox" parent="MC/Controls"]
+margin_left = 268.0
+margin_top = 115.0
+margin_right = 361.0
+margin_bottom = 133.0
+size_flags_horizontal = 4
+text = "Fullscreen"
+flat = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MC/Controls"]
+margin_left = 213.0
+margin_top = 138.0
+margin_right = 417.0
+margin_bottom = 156.0
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="MC/Controls/ButtonContainer"]
+margin_right = 100.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 100, 0 )
+text = "Ok"
+
+[node name="Cancel" type="Button" parent="MC/Controls/ButtonContainer"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 100, 0 )
+text = "Cancel"
+
+[connection signal="value_changed" from="MC/Controls/MasterGroup/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+[connection signal="value_changed" from="MC/Controls/SfxGroup/SfxSlider" to="." method="_on_SfxSlider_value_changed"]
+[connection signal="value_changed" from="MC/Controls/AmbientGroup/AmbientSlider" to="." method="_on_AmbientSlider_value_changed"]
+[connection signal="value_changed" from="MC/Controls/MusicGroup/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="toggled" from="MC/Controls/FullscreenCheck" to="." method="_on_FullscreenCheck_toggled"]
