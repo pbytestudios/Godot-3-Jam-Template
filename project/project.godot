@@ -164,6 +164,14 @@ right={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="default"
+
+[navigation]
+
+2d/default_edge_connection_margin=16.0
+
 [physics]
 
 common/enable_pause_aware_picking=true
