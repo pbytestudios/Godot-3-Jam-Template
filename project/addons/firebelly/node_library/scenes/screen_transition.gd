@@ -6,6 +6,9 @@ signal transitioned_fully
 
 onready var animation_player = $AnimationPlayer
 
+var is_transitioning:bool setget ,get_transitioning
+func get_transitioning() -> bool:
+	return animation_player.is_playing()
 
 func _enter_tree():
 	add_to_group(name)

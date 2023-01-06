@@ -1,5 +1,5 @@
 class_name ObservableFloat
-extends ObservableNumber
+extends Observable
 
 export(float) var val : float setget set_val, get_val
 func set_val(newVal:float):
@@ -22,3 +22,5 @@ export(float) var upperThreshold :float = -INF
 #if set then the current value of this number will be sent 1 frame after _ready() is called
 signal below_threshold(lower_threshold, value)
 signal aboveThreshold(upper_threshold, value)
+
+func _init() -> void: _val = 0.0

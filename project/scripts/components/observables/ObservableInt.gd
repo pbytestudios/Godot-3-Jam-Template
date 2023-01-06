@@ -1,5 +1,5 @@
 class_name ObservableInt
-extends ObservableNumber
+extends Observable
 
 export(int) var val : int setget set_val, get_val
 func set_val(newVal:int):
@@ -22,3 +22,5 @@ export(int) var upperThreshold :int = -INF
 #if set then the current value of this number will be sent 1 frame after _ready() is called
 signal below_threshold(lower_threshold, value)
 signal aboveThreshold(upper_threshold, value)
+
+func _init() -> void: _val = 0

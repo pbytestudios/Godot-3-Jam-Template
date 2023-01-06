@@ -1,8 +1,8 @@
-class_name StringReceiver
+class_name LabelReceiver
 extends Label
 
-export(String) var format :String = "%.d"
-export(NodePath) onready var sender = get_node_or_null(sender) as ObservableInt if sender else null 
+export(String) var format :String = "%s"
+export(NodePath) onready var sender = get_node_or_null(sender) as Observable if sender else null 
 
 func _ready() -> void:
 	if is_instance_valid(sender):
@@ -10,7 +10,7 @@ func _ready() -> void:
 	if sender == null:
 		printerr("[%s] sender was null!" % name)
 
-func on_sender_changed(newVal:float):
+func on_sender_changed(newVal):
 	if format.empty():
 		text = str(newVal)
 	else:

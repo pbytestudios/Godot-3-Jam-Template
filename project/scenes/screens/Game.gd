@@ -8,10 +8,13 @@ onready var settings:Dialog = $CanvasLayer/SettingsPanel
 var disable:bool 
 
 func _ready():
-	disable = true
-	ScreenTransition.transition(true)
-	yield(ScreenTransition, "transitioned_fully")
-	disable = false
+	if ScreenTransition.is_transitioning:
+		disable = true
+		yield(ScreenTransition, "transitioned_fully")
+		disable = false
+	
+func _process(delta: float) -> void:
+	pass
 
 func _unhandled_input(event):
 	if disable:

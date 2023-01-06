@@ -1,8 +1,7 @@
-class_name ObservableNumber
+class_name Observable
 extends Node
 
-#this should be either a float or an int
-var _val = 0
+var _val
 
 signal changed(newVal)
 
