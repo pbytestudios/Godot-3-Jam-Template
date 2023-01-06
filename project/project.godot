@@ -24,20 +24,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/pixelbyte/scripts/Dir.gd"
 }, {
-"base": "ObservableNumber",
-"class": "ObservableFloat",
+"base": "ObservableInt",
+"class": "HealthComp",
 "language": "GDScript",
-"path": "res://scripts/Observables/ObservableFloat.gd"
+"path": "res://scripts/components/HealthComp.gd"
 }, {
-"base": "ObservableNumber",
-"class": "ObservableInt",
+"base": "Label",
+"class": "LabelReceiver",
 "language": "GDScript",
-"path": "res://scripts/Observables/ObservableInt.gd"
+"path": "res://scripts/components/LabelReceiver.gd"
 }, {
 "base": "Node",
-"class": "ObservableNumber",
+"class": "Observable",
 "language": "GDScript",
-"path": "res://scripts/Observables/ObservableNumber.gd"
+"path": "res://scripts/components/observables/Observable.gd"
+}, {
+"base": "Observable",
+"class": "ObservableFloat",
+"language": "GDScript",
+"path": "res://scripts/components/observables/ObservableFloat.gd"
+}, {
+"base": "Observable",
+"class": "ObservableInt",
+"language": "GDScript",
+"path": "res://scripts/components/observables/ObservableInt.gd"
 }, {
 "base": "Node2D",
 "class": "Putil",
@@ -49,10 +59,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/pixelbyte/scenes/settings/SettingsData.gd"
 }, {
-"base": "Reference",
-"class": "StringReceiver",
+"base": "Node2D",
+"class": "SimpleFollowComp",
 "language": "GDScript",
-"path": "res://scripts/StringReceiver.gd"
+"path": "res://scripts/components/SimpleFollowComp.gd"
+}, {
+"base": "Observable",
+"class": "VelocityComp",
+"language": "GDScript",
+"path": "res://scripts/components/VelocityComp.gd"
 }, {
 "base": "Resource",
 "class": "VersionData",
@@ -63,12 +78,15 @@ _global_script_class_icons={
 "Bar": "",
 "Dialog": "",
 "Dir": "",
+"HealthComp": "",
+"LabelReceiver": "",
+"Observable": "",
 "ObservableFloat": "",
 "ObservableInt": "",
-"ObservableNumber": "",
 "Putil": "",
 "SettingsData": "",
-"StringReceiver": "",
+"SimpleFollowComp": "",
+"VelocityComp": "",
 "VersionData": ""
 }
 
@@ -76,6 +94,7 @@ _global_script_class_icons={
 
 firebelley/node_library/enable_screen_transition=true
 pixelbyte/enable_storage=true
+pixelbyte/enable_music=true
 
 [application]
 
@@ -90,10 +109,12 @@ boot_splash/fullsize=false
 ScreenTransition="*res://addons/firebelly/node_library/scenes/ScreenTransition.tscn"
 Storage="*res://addons/pixelbyte/autoloads/Storage.gd"
 C="*res://scripts/C.gd"
+Music="*res://addons/pixelbyte/autoloads/music/Music.tscn"
 
 [debug]
 
 gdscript/warnings/unused_argument=false
+gdscript/warnings/narrowing_conversion=false
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
 
@@ -109,12 +130,39 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/firebelly/center_pivot_offset/plugin.cfg", "res://addons/firebelly/node_library/plugin.cfg", "res://addons/firebelly/retile/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/firebelly/center_pivot_offset/plugin.cfg", "res://addons/firebelly/node_library/plugin.cfg", "res://addons/firebelly/retile/plugin.cfg", "res://addons/pixelbyte/plugin.cfg" )
+
+[global]
+
+itch_project="ld52"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
 theme/custom="res://assets/themes/blue/style.tres"
+
+[input]
+
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
