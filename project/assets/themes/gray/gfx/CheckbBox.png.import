@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CheckbBoxDisabled.png-965f2bf1fe3ed091472104b3328fe003.stex"
+path="res://.import/CheckbBox.png-f51e80b621869fbdbf3530e6960fc917.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/blue/gfx/CheckbBoxDisabled.png"
-dest_files=[ "res://.import/CheckbBoxDisabled.png-965f2bf1fe3ed091472104b3328fe003.stex" ]
+source_file="res://assets/themes/gray/gfx/CheckbBox.png"
+dest_files=[ "res://.import/CheckbBox.png-f51e80b621869fbdbf3530e6960fc917.stex" ]
 
 [params]
 

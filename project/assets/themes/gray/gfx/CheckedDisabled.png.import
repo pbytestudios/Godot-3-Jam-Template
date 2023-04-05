@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Checked.png-93dbd5127fda3d92c282c04f6435a773.stex"
+path="res://.import/CheckedDisabled.png-bca853aac815ccfc7bbf7aca580bc295.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/themes/blue/gfx/Checked.png"
-dest_files=[ "res://.import/Checked.png-93dbd5127fda3d92c282c04f6435a773.stex" ]
+source_file="res://assets/themes/gray/gfx/CheckedDisabled.png"
+dest_files=[ "res://.import/CheckedDisabled.png-bca853aac815ccfc7bbf7aca580bc295.stex" ]
 
 [params]
 
