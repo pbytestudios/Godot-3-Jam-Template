@@ -1,4 +1,5 @@
 extends Dialog
+class_name SettingsPanel
 
 var settings:SettingsData setget ,get_settings
 func get_settings() -> SettingsData: return settings
@@ -26,6 +27,7 @@ func _ready():
 	music_bus_index = AudioServer.get_bus_index("Music")
 	sfx_bus_index = AudioServer.get_bus_index("Sfx")
 	ambient_bus_index = AudioServer.get_bus_index("Ambient")
+#	button_size = Vector2(150,50)
 	update_from_settings()
 	_connect_signals()
 

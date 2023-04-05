@@ -53,10 +53,11 @@ func _ready():
 func hook_up_existing_buttons():
 	#Existing buttons? hook 'em up'
 	for btn in button_holder.get_children():
-		btn.connect("pressed", self, "button_pressed", [btn])
+		if !btn.is_connected("pressed", self, "button_pressed"):
+			btn.connect("pressed", self, "button_pressed", [btn])
+		btn.rect_min_size = button_size
 		if hover_sound:
 			btn.connect("mouse_entered", self, "_mouse_entered", [btn])
-		btn.rect_min_size = button_size
 	focus_index = 0
 
 func set_button_min_size():
@@ -171,7 +172,7 @@ func hide():
 	.hide()
 
 func set_buttons(button_names:Array, focus:int = -1):
-	if !button_names or button_names.size() == 0:
+	if button_names == null or button_names.size() == 0:
 		remove_all_buttons()
 		return
 	#make/delete any needed buttons

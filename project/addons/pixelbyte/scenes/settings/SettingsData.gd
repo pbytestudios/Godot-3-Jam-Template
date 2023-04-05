@@ -36,9 +36,9 @@ func _get(key:String):
 			printerr("'%s' is not a valid setting!" % key)
 			return 0
 
-func add(key:String, val, section:String="Settings"):
+func add(key:String, def_val, section:String = SETTINGS_SECTION):
 	if cfg.has_section_key(section, key): return
-	cfg.set_value(section, key, val)
+	cfg.set_value(section, key, def_val)
 	
 func read(filename:String = SETTINGS_FILE):
 	if !Storage.exists(filename):

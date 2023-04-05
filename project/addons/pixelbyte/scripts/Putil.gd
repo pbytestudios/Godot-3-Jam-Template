@@ -35,7 +35,7 @@ static func get_children_with_class(n:Node, className:String) -> Array:
 # Looks for the first node of type 'type' within the scene
 # tree and returns either it or null
 # NOTE: In order for this to work, you must override get_class() in the script
-# for which you want this to work:
+# for which you want this to work (pretty dumb):
 # func get_class(): return "YourClassName"
 #otherwise it will return the base class of the node itself
 static func get_first_child_of_class(n:Node, className:String):
