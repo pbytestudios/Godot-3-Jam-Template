@@ -22,10 +22,8 @@ var storage_script = preload("autoloads/Storage.gd")
 
 func _enter_tree():
 	#add custom types here
-	add_custom_type(NODE_PCAM_2D, "Camera2D", preload("node_lib/PixelCam2D.gd"), null)
-	# add_custom_type(NODE_SOUNDER, "AudioStreamPlayer", preload("node_lib/Sounder.gd"), null)
-	# add_custom_type(NODE_SOUNDER_2D, "AudioStreamPlayer2D", preload("node_lib/Sounder2D.gd"), null)
-	# add_custom_type(NODE_FADE_PLAYER, "AudioStreamPlayer2D", preload("node_lib/FadeStream.gd"), null)
+	add_custom_type(NODE_SOUNDER, "AudioStreamPlayer", preload("node_lib/Sounder.gd"), null)
+	add_custom_type(NODE_SOUNDER_2D, "AudioStreamPlayer2D", preload("node_lib/Sounder2D.gd"), null)
 
 	ProjectSettings.connect("project_settings_changed", self, "on_project_settings_changed")
 	

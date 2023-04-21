@@ -59,11 +59,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/components/observables/ObservableInt.gd"
 }, {
-"base": "Camera2D",
-"class": "PixelCam2D",
-"language": "GDScript",
-"path": "res://addons/pixelbyte/node_lib/PixelCam2D.gd"
-}, {
 "base": "Node2D",
 "class": "Putil",
 "language": "GDScript",
@@ -115,7 +110,6 @@ _global_script_class_icons={
 "Observable": "",
 "ObservableFloat": "",
 "ObservableInt": "",
-"PixelCam2D": "",
 "Putil": "",
 "SettingsData": "",
 "SettingsPanel": "",
@@ -218,4 +212,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0941176, 0.0901961, 0.141176, 1 )
 environment/default_environment="res://default_env.tres"
