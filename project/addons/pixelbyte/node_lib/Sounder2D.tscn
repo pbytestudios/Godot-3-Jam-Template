@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/pixelbyte/node_lib/Sounder2D.gd" type="Script" id=1]
+
+[node name="Sounder2D" type="AudioStreamPlayer3D"]
+script = ExtResource( 1 )

@@ -17,7 +17,6 @@ const SETTING_ENABLE_MUSIC = "addons/pixelbyte/enable_music"
 const SETTING_ENABLE_STORAGE = "addons/pixelbyte/enable_storage"
 
 #scenes/scripts for this addon
-var screen_transition_scene = preload("autoloads/Transition.tscn")
 var music_scene = preload("autoloads/music/Music.tscn")
 var storage_script = preload("autoloads/Storage.gd")
 
@@ -67,6 +66,5 @@ func update_autoload_singleton(setting:String, singleton_name:String, resPath:St
 		remove_autoload_singleton(setting)
 
 func on_project_settings_changed():
-	update_autoload_singleton(SETTING_ENABLE_TRANSITION, AUTOLOAD_TRANSITION, screen_transition_scene.resource_path)
 	update_autoload_singleton(SETTING_ENABLE_MUSIC, AUTOLOAD_MUSIC, music_scene.resource_path)
 	update_autoload_singleton(SETTING_ENABLE_STORAGE, AUTOLOAD_STORAGE, storage_script.resource_path)

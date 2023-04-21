@@ -24,15 +24,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/pixelbyte/scripts/Dir.gd"
 }, {
-"base": "AudioStreamPlayer",
+"base": "Reference",
 "class": "FadeStream",
 "language": "GDScript",
-"path": "res://addons/pixelbyte/scripts/FadeStream.gd"
+"path": "res://addons/pixelbyte/node_lib/FadeStream.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "FadeStreamMgr",
 "language": "GDScript",
-"path": "res://addons/pixelbyte/scripts/FadeStreamMgr.gd"
+"path": "res://addons/pixelbyte/node_lib/FadeStreamMgr.gd"
 }, {
 "base": "ObservableInt",
 "class": "HealthComp",
@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/components/observables/ObservableInt.gd"
 }, {
+"base": "Camera2D",
+"class": "PixelCam2D",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/node_lib/PixelCam2D.gd"
+}, {
 "base": "Node2D",
 "class": "Putil",
 "language": "GDScript",
@@ -78,6 +83,16 @@ _global_script_classes=[ {
 "class": "SimpleFollowComp",
 "language": "GDScript",
 "path": "res://scripts/components/SimpleFollowComp.gd"
+}, {
+"base": "AudioStreamPlayer",
+"class": "Sounder",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/node_lib/Sounder.gd"
+}, {
+"base": "AudioStreamPlayer2D",
+"class": "Sounder2D",
+"language": "GDScript",
+"path": "res://addons/pixelbyte/node_lib/Sounder2D.gd"
 }, {
 "base": "Observable",
 "class": "VelocityComp",
@@ -100,10 +115,13 @@ _global_script_class_icons={
 "Observable": "",
 "ObservableFloat": "",
 "ObservableInt": "",
+"PixelCam2D": "",
 "Putil": "",
 "SettingsData": "",
 "SettingsPanel": "",
 "SimpleFollowComp": "",
+"Sounder": "",
+"Sounder2D": "",
 "VelocityComp": "",
 "VersionData": ""
 }
@@ -148,7 +166,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/firebelly/center_pivot_offset/plugin.cfg", "res://addons/firebelly/node_library/plugin.cfg", "res://addons/firebelly/retile/plugin.cfg", "res://addons/pixelbyte/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/firebelly/center_pivot_offset/plugin.cfg", "res://addons/firebelly/node_library/plugin.cfg", "res://addons/firebelly/retile/plugin.cfg" )
 
 [global]
 

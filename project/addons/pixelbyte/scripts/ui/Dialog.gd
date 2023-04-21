@@ -35,14 +35,14 @@ var msg:String = ""  setget set_msg,get_msg
 func get_msg() -> String: return get_node(message_path).text if message_path else ""
 func set_msg(val:String): if message_path: get_node(message_path).text = val
 
-var hover_sound:AudioStreamPlayer
-var pressed_sound:AudioStreamPlayer
+var hover_sound:Sounder
+var pressed_sound:Sounder
 
 func _ready():
 	button_holder = get_node(button_container_path)
 	if hide_on_ready:
 		hide()
-
+	
 	if hover_sound_path:
 		hover_sound = get_node(hover_sound_path)
 	if pressed_sound_path:
