@@ -1,2 +1,2 @@
 # Godot-Jam-Template
-Herein is a template for my gamejam projects that allow it.
+Herein is a Godot 3.x template for my gamejam projects.
