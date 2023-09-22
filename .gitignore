@@ -4,7 +4,7 @@
 ### Godot ###
 # Godot-specific ignores
 .import/
-#*.import
+.vscode/*
 
 # Imported translations (automatically generated from CSV files)
 *.translation
